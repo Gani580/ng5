@@ -1,0 +1,20 @@
+trigger:
+  - master
+
+pool:
+  name: Default
+
+steps:
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean install'
+    displayName: 'Build with Maven'
+
+  - script: |
+      echo "Hello, it's my Azure DevOps App"
+    displayName: 'Run an echo command'
+
+  - script: |
+      java -jar target/veeresh-0.0.1-SNAPSHOT.jar
+    displayName: 'Run the jar file of My veeresh App'
