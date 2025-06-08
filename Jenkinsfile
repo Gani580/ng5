@@ -1,7 +1,7 @@
 pipeline { 
     agent any 
     tools { 
-        maven 'Maven' // Ensure name matches configured Maven installation 
+        maven 'MVN_HOME' // Ensure name matches configured Maven installation 
     } 
     stages { 
         stage('Checkout') {  
